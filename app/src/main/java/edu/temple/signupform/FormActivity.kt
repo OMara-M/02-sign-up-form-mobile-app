@@ -18,7 +18,6 @@ class FormActivity : AppCompatActivity() {
         val confirmPassword = findViewById<TextView>(R.id.editTextConfirmPassword)
         val empty = ""
 
-
         findViewById<Button>(R.id.btnSave).setOnClickListener {
 
             // clear previous errors form text views

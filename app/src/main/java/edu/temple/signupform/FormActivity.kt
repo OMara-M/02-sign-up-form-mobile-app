@@ -21,6 +21,12 @@ class FormActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnSave).setOnClickListener {
 
+            // clear previous errors form text views
+            usrName.error = null
+            usrEmail.error = null
+            usrPassword.error = null
+            confirmPassword.error = null
+
             if (usrName.text.toString() == empty) {
                 usrName.error = "Please enter a name"
             }
@@ -33,8 +39,8 @@ class FormActivity : AppCompatActivity() {
             if (confirmPassword.text.toString() == empty) {
                 confirmPassword.error = "Please enter a Password"
             }
-
-            if (usrPassword.text.equals(confirmPassword.text)) {
+//            if (usrPassword.text.equals(confirmPassword.text))
+            if (usrPassword.text.toString() != confirmPassword.text.toString()) {
                 usrPassword.error = "passwords must match"
                 confirmPassword.error = "passwords must match"
             }

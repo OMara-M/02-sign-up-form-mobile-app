@@ -40,7 +40,8 @@ class FormActivity : AppCompatActivity() {
             }
 
             if (usrName.error == null && usrEmail.error == null &&
-                usrPassword.error == null && confirmPassword.error == null) {
+                usrPassword.error == null && confirmPassword.error == null
+            ) {
                 Toast
                     .makeText(
                         this@FormActivity,

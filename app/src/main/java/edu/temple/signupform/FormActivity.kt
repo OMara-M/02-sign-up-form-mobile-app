@@ -3,7 +3,7 @@ package edu.temple.signupform
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import android.widget.EditText
 import android.widget.Toast
 
 class FormActivity : AppCompatActivity() {
@@ -12,10 +12,10 @@ class FormActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // get references to user inputs on the Form
-        val usrName = findViewById<TextView>(R.id.editTextName)
-        val usrEmail = findViewById<TextView>(R.id.editTextEmail)
-        val usrPassword = findViewById<TextView>(R.id.editTextPassword)
-        val confirmPassword = findViewById<TextView>(R.id.editTextConfirmPassword)
+        val usrName = findViewById<EditText>(R.id.editTextName)
+        val usrEmail = findViewById<EditText>(R.id.editTextEmail)
+        val usrPassword = findViewById<EditText>(R.id.editTextPassword)
+        val confirmPassword = findViewById<EditText>(R.id.editTextConfirmPassword)
         val empty = ""
 
         findViewById<Button>(R.id.btnSave).setOnClickListener {
@@ -38,7 +38,6 @@ class FormActivity : AppCompatActivity() {
             if (confirmPassword.text.toString() == empty) {
                 confirmPassword.error = "Please enter a Password"
             }
-//            if (usrPassword.text.equals(confirmPassword.text))
             if (usrPassword.text.toString() != confirmPassword.text.toString()) {
                 usrPassword.error = "passwords must match"
                 confirmPassword.error = "passwords must match"
